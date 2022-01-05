@@ -78,23 +78,29 @@ const studentRating = [
     },
   ];
   
-  studentRating.forEach(function (element) {
-    document.getElementById("window").insertAdjacentHTML(
-      "beforeend",
-      `
-      <tr>
-          <td>
-              <img src="${element.img}" alt="">
-          </td>
-          <td>
-              <div>${element.name}</div>
-              <div>${element.surname}</div>
-          </td>
-          <td>
-              <div>${element.numberdonehw}</div>
-              <div>${element.score}</div>
-          </td>
-      </tr>
-      `
-    );
-  });
+
+const any = (list) =>
+list 
+  studentRating.filter((hwDone) => hwDone.numberdonehw === "9")
+    .forEach((element) =>
+      document.getElementById("window").insertAdjacentHTML(
+        "beforeend",
+        `
+        <tr>
+        <td>
+        <img src="${element.img}" alt="">
+        </td>
+        <td>
+        <div>${element.name}</div>
+        <div>${element.surname}</div>
+        </td>
+        <td>
+        <div>${element.numberdonehw}</div>
+        <div>${element.score}</div>
+        </td>
+        </tr>
+        `
+        )
+      );
+  
+    
